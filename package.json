@@ -1,0 +1,17 @@
+{
+    "name": "plunkbot",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "author": "jae kaplan <me@jkap.io>",
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.1",
+        "dotenv": "^4.0.0",
+        "request": "^2.81.0",
+        "request-promise-native": "^1.0.4",
+        "twit": "^2.2.9"
+    },
+    "devDependencies": {
+        "eslint": "^4.0.0"
+    }
+}
