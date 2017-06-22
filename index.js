@@ -4,6 +4,12 @@ const urlLib = require("url");
 const Twit = require("twit");
 require("dotenv").config();
 
+const ALLOWED_TYPES = [
+    "Video Game",
+    "Film",
+    "Series"
+];
+
 const getPage = async (url) => {
     const $ = await request.get({
         url: url,
@@ -13,10 +19,7 @@ const getPage = async (url) => {
     return $;
 };
 
-const getType = ($) => {
-    const type = $(".page-title strong").text().trim();
-    return type;
-};
+const getType = ($) => $(".page-title strong").text().trim();
 
 const getTitle = ($) => {
     const full = $(".page-title").text().trim();
@@ -30,31 +33,6 @@ const getNext = ($, url) => {
     return urlLib.resolve(url, href);
 };
 
-const allowedTypes = [
-    "Video Game",
-    "Film",
-    "Series"
-];
-
-const processEntry = async (url) => {
-    const $ = await getPage(url);
-    const type = getType($);
-    console.warn(type);
-    if (allowedTypes.some((el) => type.includes(el))) {
-        const title = getTitle($);
-        tweet(`PlayerUnknown's ${title}`);
-    } else {
-        const next = getNext($, url);
-        processEntry(next);
-    }
-};
-
-const generateUnknownPlayer = async () => {
-    const url = "http://tvtropes.org/pmwiki/pmwiki.php/Series/LawAndOrder";
-    const $ = await getPage(url);
-    const next = getNext($, url);
-    processEntry(next);
-};
 
 const tweet = async (text) => {
     const t = new Twit({
@@ -70,6 +48,27 @@ const tweet = async (text) => {
     } catch (e) {
         console.warn(e);
     }
-}
+};
+
+const processEntry = async (url) => {
+    const $ = await getPage(url);
+    const type = getType($);
+    console.warn(type);
+    if (ALLOWED_TYPES.some((el) => type.includes(el))) {
+        const title = getTitle($);
+        tweet(`PlayerUnknown's ${title}`);
+    } else {
+        const next = getNext($, url);
+        processEntry(next);
+    }
+};
+
+const generateUnknownPlayer = async () => {
+    const url = "http://tvtropes.org/";
+    const $ = await getPage(url);
+    const next = getNext($, url);
+    processEntry(next);
+};
+
 
 generateUnknownPlayer();

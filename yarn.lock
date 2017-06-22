@@ -542,6 +542,10 @@ ignore@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.3.tgz#432352e57accd87ab3110e82d3fea0e47812156d"
 
+immutable@^3.4.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
+
 imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
@@ -627,6 +631,13 @@ isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
 
+iscool@^1.1.11:
+  version "1.1.37"
+  resolved "https://registry.yarnpkg.com/iscool/-/iscool-1.1.37.tgz#1f8796b7f5e9cb6310326ce3c8aab4c80a671b48"
+  dependencies:
+    immutable "^3.4.1"
+    wordfilter "^0.2.4"
+
 isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
@@ -687,6 +698,21 @@ levn@^0.3.0, levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
+
+lodash.assign@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/lodash.assign/-/lodash.assign-4.0.1.tgz#8e7ff0206897a99dca32fc8123309f5c4c2c731e"
+  dependencies:
+    lodash.keys "^4.0.0"
+    lodash.rest "^4.0.0"
+
+lodash.keys@^4.0.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.keys/-/lodash.keys-4.2.0.tgz#a08602ac12e4fb83f91fc1fb7a360a4d9ba35205"
+
+lodash.rest@^4.0.0:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/lodash.rest/-/lodash.rest-4.0.5.tgz#954ef75049262038c96d1fc98b28fdaf9f0772aa"
 
 lodash@^4.0.0, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.4, lodash@^4.3.0:
   version "4.17.4"
@@ -936,6 +962,12 @@ safe-buffer@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
 
+sentiment@^1.0.2:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/sentiment/-/sentiment-1.0.6.tgz#f6096c6271f020f490d58b54a8afd598db8acbb1"
+  dependencies:
+    lodash.assign "4.0.1"
+
 signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
@@ -1018,6 +1050,13 @@ text-table@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
 
+this-is-probably-ok-to-say@^1.0.100:
+  version "1.0.100"
+  resolved "https://registry.yarnpkg.com/this-is-probably-ok-to-say/-/this-is-probably-ok-to-say-1.0.100.tgz#3bbf664aa7d84101c779d7a9a42867421eb2d3a1"
+  dependencies:
+    iscool "^1.1.11"
+    sentiment "^1.0.2"
+
 through@^2.3.6:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
@@ -1079,6 +1118,10 @@ verror@1.3.6:
   resolved "https://registry.yarnpkg.com/verror/-/verror-1.3.6.tgz#cff5df12946d297d2baaefaa2689e25be01c005c"
   dependencies:
     extsprintf "1.0.2"
+
+wordfilter@^0.2.4:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/wordfilter/-/wordfilter-0.2.6.tgz#de41ac634aa994b9f1bb938c1ccbbcde49641465"
 
 wordwrap@~1.0.0:
   version "1.0.0"

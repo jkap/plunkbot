@@ -9,6 +9,7 @@
         "dotenv": "^4.0.0",
         "request": "^2.81.0",
         "request-promise-native": "^1.0.4",
+        "this-is-probably-ok-to-say": "^1.0.100",
         "twit": "^2.2.9"
     },
     "devDependencies": {
